@@ -1,0 +1,110 @@
+<!--main html-->
+
+<head>
+    <title>IdeaShare</title>
+    <link href="http://fonts.googleapis.com/css?family=Henny+Penny" rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+
+<body>
+
+    {{> header}}
+
+    <div class="container main">
+        <!--<h2>Popular:</h2>-->
+        <div class="row">
+            {{#each popularIdeas}}
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                {{> card}}
+            </div>
+            {{/each}}
+        </div>
+    </div>
+
+</body>
+
+<template name="card">
+    <div class="">
+        <div class="panel panel-default myPanel">
+            <div class="panel-heading">
+                <h3 class="panel-title"><a href="#">{{title}}</a></h3>
+            </div>
+            <div class="panel-body">
+                <p>
+                    {{body}}
+                </p>
+                {{> likeGraphVisual}}
+            </div>
+            <div class="panel-footer">
+                <div class="btn-group btn-group-justified" role="group">
+                    <div class="btn-group">
+                        <button class="btn btn-sm btn-default inc"><span class="glyphicon glyphicon-menu-up"></span>
+                        </button>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-sm btn-default"><span class="glyphicon glyphicon-thumbs-up"></span> {{likes}}</button>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-default btn-sm dec"><span class="glyphicon glyphicon-menu-down"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="header">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header pull-left">
+                <a href="#" class="navbar-brand">IdeaShare</a>
+            </div>
+            <ul class="nav navbar-nav pull-right">
+                {{> loginButtons}}
+            </ul>
+            <ul class="nav navbar-nav navbar-right pull-right addWrap">
+                <li><a href="" data-toggle="modal" data-target="#myModal">Add Idea</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--my modal bro-->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Add an Idea</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="ideaForm">
+                        <div class="form-group">
+                            <input class="form-control" name="ideaTitle" placeholder="Title of idea.">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" name="ideaBody" cols="30" rows="16" placeholder="What is your idea?"></textarea>
+                        </div>
+                        <div class="btn-group btn-group-justified" role="group">
+                            <div class="btn-group">
+                                <button type="submit" class="btn btn-primary submitIdeaBtn">Submit</button>
+                            </div>
+                            <div class="btn-group">
+                                <button class="btn btn-danger" type="reset">Reset</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template name="likeGraphVisual">
+    <div class="likeGraph">
+        <!--Data visualization will be injected here-->
+    </div>
+</template>

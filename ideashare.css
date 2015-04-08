@@ -1,0 +1,52 @@
+/* CSS declarations go here */
+
+div.jumbotron h1,
+div.jumbotron .h1 {} div.jumbo1 {
+    background-color: rgba(222, 79, 79, 0.82);
+    margin-bottom: 0;
+}
+div.jumbo2 {
+    padding: 15px;
+}
+.myContainer1 {
+    padding-right: 100px !important;
+}
+.myPanel {
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -webkit-animation-delay: 20s;
+    -moz-animation-delay: 1s;
+}
+.tiny {
+    font-size: 0.7em;
+    margin-bottom: 5px;
+    padding-top: 21px;
+    letter-spacing: 2px;
+}
+.main {
+    margin-top: 80px;
+}
+.navbar-brand {
+    margin-top: 1px;
+    padding-top: 18px;
+    padding-bottom: 0;
+    font-size: 1.7em;
+    font-family: 'Henny Penny', cursive;
+}
+.container {
+    max-width: 950px;
+}
+.panel-title {
+    font-size: .9em;
+}
+.panel-body {
+    font-size: .9em;
+    min-height: 100px;
+    max-height: 110px;
+}
+.addWrap {
+    margin-right: 5px;
+}
+svg {
+    color: blue;
+}
